@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css">
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'dept.css'%}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+
+    <link rel="icon" type="image/x-icon" href="{%static '/pictures/tmslogo1.png'%}">
+    <title>IT Department</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- styling carousel-->
+	<style>
+    .technical{
+      background-color:  #222;;
+    }
+        .carousel-item {
+	height: 100vh;
+	min-height: 300px;
+}
+.carousel-caption {
+	bottom: 220px;
+}
+.carousel-caption h5 {
+	font-size: 45px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-top: 25px;
+	font-family: merienda;
+    color: aqua;
+}
+.carousel-caption p {
+	width: 60%;
+	margin: auto;
+	font-size: 18px;
+	line-height: 1.9;
+	font-family: poppins;
+    color: aqua;
+}
+.carousel-caption a {
+	text-transform: uppercase;
+	background: #262626;
+	padding: 10px 30px;
+	display: inline-block;
+	color:teal;
+	margin-top: 15px;
+}
+.w-100 {
+	height: 100vh;
+}
+
+.navbar-nav .nav-link {
+  color: aqua; /* Change this to the desired color */
+}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+     color: green !important; 
+}
+.navbar-nav.nav-link.active {
+  color: green!important;
+}
+
+@media only screen and (max-width: 767px) {
+	.navbar-nav.ml-auto {
+		background: rgba(0, 0, 0, 0.5);
+	}
+	.navbar-nav a {
+		font-size: 14px;
+		font-weight: normal;
+	}
+  media only screen and (max-width: 767px) {
+    .navbar-nav.ml-auto {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .navbar-nav a {
+      font-size: 14px;
+      font-weight: normal;
+    }
+    .content{
+          display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+      }
+      .content1{
+          display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+      }
+  }
+  
+}
+
+    </style>
+</head>
+<body>
+	 <!--  nav bar-->
+     <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+         <!-- <a class="navbar-brand me-auto" href="home.html">Techno Main Saltlake</a>-->
+         <a class="navbar-brand" href="#"><img 
+          src= 
+          "{%static '/pictures/tmslogo.png'%}" 
+          alt="" width="130px" 
+          height="32px"> 
+        <!--  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>-->
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+               
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a style= "margin-top: -25px" class="nav-link max-lg-2" aria-current="page" href="#About">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link max-lg-2" href="#clubs">Club</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link max-lg-2" href="#Event">Event</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link max-lg-2" href="{% url 'home' %}">Home</a>
+                  </li>
+                </div>
+              </div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </nav>
+	<div class="carousel slide" data-ride="carousel" id="carouselExampleIndicators">
+		<ol class="carousel-indicators">
+			<li class="active" data-slide-to="0" data-target="#carouselExampleIndicators"></li>
+			<li data-slide-to="1" data-target="#carouselExampleIndicators"></li>
+			<li data-slide-to="2" data-target="#carouselExampleIndicators"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img alt="First slide" class="d-block w-100" src="{%static '/pictures/g5.png'%}">
+				<div class="carousel-caption d-none d-md-block">
+					<h5 class="animated bounceInRight" style="animation-delay: 1s">welcome</h5>
+					<p class="animated bounceInLeft" style="animation-delay: 2s ">to the Department of Information Technology of Techno Main Saltlake</p>
+					
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img alt="Second slide" class="d-block w-100" src="pictures\g4.png">
+				<div class="carousel-caption d-none d-md-block">
+					<h5 class="animated slideInDown" style="animation-delay: 1s"></h5>
+					<p class="animated fadeInUp" style="animation-delay: 2s"></p>
+					
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img alt="Third slide" class="d-block w-100" src="{%static '/pictures/g1.png'%}">
+				<div class="carousel-caption d-none d-md-block">
+					
+				
+				
+				</div>
+			</div>
+		</div><a class="carousel-control-prev" data-slide="prev" href="#carouselExampleIndicators" role="button"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a> <a class="carousel-control-next" data-slide="next" href="#carouselExampleIndicators" role="button"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>
+	</div>
+       <!--  ABOUT US-->
+  <section id="About"data-aos="fade-up"data-aos-duration="3000">
+    <div class="title"data-aos="fade-up"data-aos-duration="3000">
+  </br>
+      <h2>About Us</h2>
+      <p>
+    <b><i>   
+        THE DEPARTMENT OF
+        INFORMATION TECHNOLOGY.</i></b> 
+      </p>
+  </div>
+  <div class="content"data-aos="fade-up"data-aos-duration="3000">
+     <p><b>Techno Main Salt Lake, a premier educational institution was
+        established in the year 2001, initially with 4 AICTE approved Degree
+        Engineering courses including the department of Information
+        Technology. Since its inception, the department has been committed to
+        provide a conductive learning environment to its students and
+        preparing them for the challenges of the ever-evolving IT industry.
+        The department is constantly trying to evolve, advance, and enhance
+        the fundamentals of IT with a motive in building interest amongst
+        students for specialized research, develop skills and creating the ability
+        in them for better academic credentials.
+        Moreover, the department offers various co-curricular activities for
+        showcasing their inner talents. It has an active student association
+        which plays a crucial role in organizing a variety of events and
+        activities. From cultural programs and seminars to technical workshops
+        and community outreach initiatives, contributing to the holistic
+        development of students.
+        Department of Information Technology strives towards making the
+        learning experience promising for the aspirants so that nothing stands
+        as a barrier between the students and success.
+        <BR>
+            A club is a big part of college life. A group of students
+            organized with a similar interest for a sports, cultural
+            and technical purpose brings out new aspects and
+            transitions in their lives.
+            In the view of the students, from the year of 2013, the
+            department of Information Technology started it's
+            own club - InspirIT, the official cultural club of the
+            department and Deathletico, the official sports club of
+            the department of Information Technology.
+            With the goal to provide students with knowledge and
+            resources, in the year of 2021, the department of
+            Information Technology introduced the official
+            technical club - Mindspark which consists of
+            IntellecT, the coding club of department of
+            Information Technology and EmpowerIT, startup and
+            ideation club of department of Information
+            Technology.
+    </p>
+    </b></div>
+  </div>
+  </section>
+<!-- adding clubs-->
+<div class="section reveal"data-aos="fade-up"data-aos-duration="3000">
+<section id="clubs">
+  <div class="title"data-aos="fade-up"data-aos-duration="3000">
+    <h2>CLUBS</h2>
+    <h3>Of Information Technology</h3>
+</div>
+  <div class="clubsinfo"data-aos="fade-up"data-aos-duration="3000">
+<div class="container">
+  <div class="card">
+    <div class="face face1">
+      <div class="content">
+        <img src="{%static '/pictures/inspiritlogo.png'%}" alt="">
+        <h3>INSPIRIT</h3>
+      </div>
+    </div>
+    <div class="face face2">
+      <div class="content">
+        <p> In the view of the students, from the year of 2013, the
+          department of Information Technology started it's
+          own club - InspirIT ,the official cultural club of the
+          department.</p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="face face1">
+      <div class="content">
+        <img src="{%static '/pictures/deathleticologo.png'%}" alt="">
+        <h3>DE'ATHLETICO</h3>
+      </div>
+    </div>
+    <div class="face face2">
+      <div class="content">
+        <p>The Department of Information Technology believes
+          in the motto of service towards society and hence
+          started De-Athletico , the official Social Services club
+          under Inspirit.</p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="face face1">
+      <div class="content">
+        <img src="{%static '/pictures/mindsparklogo.png'%}" alt="">
+        <h3>MINDSPARK</h3>
+      </div>
+    </div>
+    <div class="face face2">
+      <div class="content">
+        <p>The technical club  that
+          focuses on technology and its various applications.
+          The club provides a platform for students to learn
+          about emerging technologies and
+          develop skills in areas such as programming, web development. </p>
+       
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="face face1">
+      <div class="content">
+        <img src="{%static '/pictures/INTELLECTLOGO.png'%}" alt="">
+        <h3>INTELLECT</h3>
+      </div>
+    </div>
+    <div class="face face2">
+      <div class="content">
+        <p> A coding club is a student organization that provides a
+          platform for students to learn and develop their coding
+          skills.</p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="face face1">
+      <div class="content">
+        <img src="{%static '/pictures/empowerit.png'%}" alt="">
+        <h3>EMPOWERIT</h3>
+      </div>
+    </div>
+    <div class="face face2">
+      <div class="content">
+        <p>Empower IT brings together aspiring entrepreneurs to
+          share ideas, collaborate, and learn from each other.
+          The club's primary objective is to create a community
+          of like-minded individuals who are passionate about
+          starting and growing businesses.
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+</div>
+<div id="Event">
+<div class="section reveal">
+  <section id="Technical"data-aos="fade-up"data-aos-duration="3000">
+      <div class="title"data-aos="fade-up"data-aos-duration="3000">
+          <h2>CULTURAL EVENT</h2>
+          <h3>conducted by the cultural club of IT department</h3>
+      </div>
+      <div class="content">
+          <div class="image">
+              <img src="pictures\inspirit.png" alt="">
+          </div>
+  
+          <div class="service-box">
+          <h2>INSPIRIT</h2>
+          
+          <p>
+            INSPIRIT is a multifaceted demesne of culture that has been showcased as our department’s cultural fest. From the stage being set up, to the gates being covered in flowers, lights and beautiful posters made by the students, INSPIRIT did it all this past year on __ March 2023. 
+The event embarked on with some wonderfully curated musical performances, followed by a picturesque dance performance featuring the theme “Youth”, incorporating Bengali folk, all performed by the departmental students. The Grand Fashion Show – “ALLURE” won hearts and applause as the students depicted the theme “Elements of Nature” through their confident performance on the runway. 
+In between the performances, the anchors and alumni engaged in shedding some light on wisdom and experience. The showstopper of the night was none other than the renowned singer – Snigdhajit Bhowmik, whose performance mesmerized the crowd, engulfing them into a beautiful haze. 
+The evening’s huge success was possible on account of the immense hard work by the faculty and students of the department. Hence, the department of Information Technology wishes to carry on with this enriching tradition for years to come!
+
+           </p>
+          </div>
+      </div>
+      </section>
+    </div>
+    <div class="section reveal">
+      <section id="Cultural"data-aos="fade-up"data-aos-duration="3000">
+          <div class="title"data-aos="fade-up"data-aos-duration="3000">
+              <h2>SPORTS EVENT</h2>
+              <h3>Conducted by -sports club of IT department</h3>
+          </div>
+          <div class="content">
+            <div class="service-box1" style="color:rgb(165, 61, 165);">
+              <b><h2>DE' ATHLETICO </h2></b>
+              
+             <p>
+              De-Athletico, the official Social Services club under INSPIRIT organized the Annual Sports Tournament as The Social Welfare Initiative by the Department of Information
+Technology. The impoverished children from Ramakrishna Mission Anathbhandar were welcomed with open arms on our campus, as the whole sporting event was dedicated to helping them.
+To make a fun activity for the children, the team arranged an art competition, providing them with materials which they used to exhibit their artistic qualities! Being awarded with goodies and prizes made them smile from ear to ear. Not only did they shine in arts but their participation in the sports activities filled everyone with immense joy. 
+Apart from the children, the students also ardently took part in cricket, football, kabaddi, tug-of-war, footrace and sprint. The winners were awarded in a prize distribution ceremony for their incredible performance! But it wasn’t the winners who only shined, all the participants were basking in glory after performing with such incredible sportsmanship.  
+
+             </p>
+              </div>
+              <div class="image">
+                  <img src="anakhronus1.jpeg" alt="">
+              </div>
+      
+             
+          </div>
+          </section>
+        </div>
+        <div class="section reveal">
+          <section id="Social"data-aos="fade-up"data-aos-duration="3000">
+              <div class="title"data-aos="fade-up"data-aos-duration="3000">
+                  <h2>BUSINESS IDEA COMPETITION</h2>
+                  <h3>Conducted by -INSPIRIT</h3>
+              </div>
+              <div class="content1">
+                  <div class="image">
+                      <img src="filan.jpg" alt="">
+                  </div>
+          
+                  <div class="service-box2">
+                  <h2>BIZZ-IT</h2>
+                <P>
+                  BizzIT, under Inspirit is a business idea competition that invites  
+                  teams to submit innovative business ideas for evaluation to
+                   encourage creativity and foster new business ventures.
+                   Participants are invited to present their ideas to a panel of
+                   judges, who evaluate the feasibility, scalability, and potential
+                   impact of each proposal.Our motto is to provide valuable
+                   networking opportunities and exposure to potential investors
+                   and instill the spirit of innovation in today's youth. 
+                  BizzIT is a way to spread the idea of business and
+                   entrepreneurship among the youth of today, provide guidance,
+                   mentorship, and provide reality tomorrow to today's idea. 
+                  It's our take  to promote entrepreneurship and spur innovation,
+                   while also providing valuable support to new and emerging
+                   business leads.
+                   It's our take  to promote entrepreneurship and spur innovation,
+                   while also providing valuable support to new and
+                   emerging business leads
+                </P>
+                  
+                  </div>
+              </div>
+              </section>
+            </div>
+            <div class="section reveal">
+              <section id="Technical"data-aos="fade-up"data-aos-duration="3000">
+                  <div class="title"data-aos="fade-up"data-aos-duration="3000">
+                      <h2>EMPOWERIT ANNUAL EVENT</h2>
+                      <h3>Conducted by - MindSpark</h3>
+                  </div>
+                  <div class="content">
+                      <div class="image">
+                          <img src="edge2.jpg" alt="">
+                      </div>
+                      <div class="service-box">
+                      <h2>IGNITE</h2>
+                     <P>
+                      On the 15th of March, EmpowerIT hosted their annual event,
+                      Ignite, which was organized by Team MindSpark from the
+                      Department of Information Technology at Techno Main Salt
+                      Lake. The event was a grand success and was graced by the
+                      presence of two distinguished guests - Ms. Sujata Chatterjee, the
+                      founder of TWIRL.STORE, and Ms. Neelu Jain, the CEO of
+                      Khrysalis Training & Consultancy LLP and Emerge Finishing
+                      School.
+                      The event began with a warm welcome to the guests and an
+                      introduction to EmpowerIT and its mission. The guests then
+                      shared their thoughts on the importance of technology and the
+                      role it plays in the development of society. They also spoke about
+                      their own experiences in the industry and offered valuable
+                      advice to the students in attendance
+                     </P>
+                      </div>
+                  </div>
+                  </section>
+                </div>
+                <div class="section reveal">
+                  <section id="Cultural"data-aos="fade-up"data-aos-duration="3000">
+                      <div class="title"data-aos="fade-up"data-aos-duration="3000">
+                          <h2>Technical Hackathon</h2>
+                          <h3>Conducted by -INSPIRIT</h3>
+                      </div>
+                      <div class="content">
+                        <div class="service-box1" style="color:rgb(165, 61, 165);">
+                          <b><h2>ITERATION </h2></b>
+                          
+                         <P>
+                          Iteration, under inspirit is a technical hackathon  where groups
+                          of students come together, collaborate and work intensively on
+                          a problem statement which was provided by hoichoi.Tech, our
+                          official title sponsor for inspirit, 2022. The event also saw the
+                          signing of a Memorandum of Understanding between Techno
+                          India University and Pace University strengthening the bonds
+                          between the two universities,
+                          The goal of a hackathon is to develop innovative solutions to
+                          real-world problems using technology. 
+                         Iteration is a great opportunity for students to hone their
+                          technical skills, work on real-world problems, and network with
+                          peers and industry experts
+                         </P>
+                        
+                          </div>
+                          <div class="image">
+                              <img src="anakhronus1.jpeg" alt="">
+                          </div>
+                  
+                         
+                      </div>
+                      </section>
+                    </div>
+                    <div class="section reveal">
+                      <section id="Social"data-aos="fade-up"data-aos-duration="3000">
+                          <div class="title"data-aos="fade-up"data-aos-duration="3000">
+                              <h2>Farewell Event</h2>
+                              <h3>Conducted by -clubs of IT department</h3>
+                          </div>
+                          <div class="content1">
+                              <div class="image">
+                                  <img src="filan.jpg" alt="">
+                              </div>
+                      
+                              <div class="service-box2">
+                              <h2>BON-VOYAGE</h2>
+                              
+                           <p>
+                            BON VOYAGE is the farewell ceremony of the department
+                            of Information Technology which is celebrated with a lots of
+                            zeal and enthusiasm to celebrate the end of a long journey
+                            and the beginning of a new chapter of the final year students.
+                            The celebration begins with the lighting of the lamp followed
+                            by cultural events, skits, and other fun activities to reminisce
+                            about the good times they’ve had during the past years. Each
+                            of the students are offered gifts and memento as a token of
+                            appreciation from the department. It’s a gift from the juniors
+                            to our beloved seniors for which a month long preparation
+                            and planning takes place.
+                            BON VOYAGE is to relive all those moments that made us
+                            laugh, the lessons that we learned, and the friendships that
+                            we made. It's the time to acknowledge and appreciate the
+                            efforts of our teachers and mentors who have helped us
+                            grow and learn.
+                            It’s a token of love and appreciation to our loved seniors
+                           </p>
+                              
+                              </div>
+                          </div>
+                          </section>
+                        </div>
+                        <div class="section reveal">
+                          <section id="Cultural"data-aos="fade-up"data-aos-duration="3000">
+                              <div class="title"data-aos="fade-up"data-aos-duration="3000">
+                                  <h2> ALUMNI MEET</h2>
+                                  <h3>Conducted by -clubs of IT department</h3>
+                              </div>
+                              <div class="content">
+                                <div class="service-box1" style="color:rgb(165, 61, 165);">
+                                  <b><h2>ALUMNI-MEET </h2></b>
+                                  
+                                 <p>
+                                  the alumni meet was a fantastic event that brought
+ together the institute's past, present, and future. The event was a
+ reminder of the institute's commitment to nurturing successful
+ professionals and maintaining strong connections with its alumni.
+ But we hope to continue this legacy every year and call a segment
+ of our IT family to celebrate the bond we share with our alumni
+ members
+                                 </p>
+                                
+                                  </div>
+                                  <div class="image">
+                                      <img src="anakhronus1.jpeg" alt="">
+                                  </div>
+                                </section>
+                              </div>
+                              <div class="section reveal">
+                                <section id="Social"data-aos="fade-up"data-aos-duration="3000">
+                                    <div class="title"data-aos="fade-up"data-aos-duration="3000">
+                                        <h2>CODING COMPETITION</h2>
+                                        <h3>Conducted by -clubs of IT department</h3>
+                                    </div>
+                                    <div class="content1">
+                                        <div class="image">
+                                            <img src="filan.jpg" alt="">
+                                        </div>
+                                
+                                        <div class="service-box2">
+                                        <h2>CODING COMPETITION</h2>
+                                        
+                                    <P>
+                                      With the series of Competitive Coding
+                                      Competitions, the students have developed the
+                                      innate reflex to solve any given complicated
+                                      problem by taking simpler mathematical
+                                      approaches.
+                                    </P>
+                                       
+                                        </div>
+                                    </div>
+                                    </section>
+                                  </div>
+                                  <div class="section reveal">
+                                    <section id="Cultural"data-aos="fade-up"data-aos-duration="3000">
+                                        <div class="title"data-aos="fade-up"data-aos-duration="3000">
+                                            <h2> PROJECT COMPETITION</h2>
+                                            <h3>Conducted by -clubs of IT department</h3>
+                                        </div>
+                                        <div class="content">
+                                          <div class="service-box1" style="color:rgb(165, 61, 165);">
+                                            <b><h2>PROJECT COMPETITION </h2></b>
+                                            
+                                         <P>
+                                          Under the guidance of our alumni mentors and
+                                          teachers, our students got the chance to work
+                                          with the best technologies and projects to
+                                          innovate their ideas. 12 teams were selected
+                                          after thorough screening. Among them, the top
+                                          3 were selected based on ideation, presentation
+                                          and implementation.The project competition posed as a platform to
+                                          showcase some  innovative projects that were
+                                          created with sheer determination and support from
+                                          our faculty body and alumni.
+                                         With the motive to expand furthur by creating,
+                                          learning and implementing, IntellecT ventures out
+                                          for equiping our students to be the part of the next
+                                          Mega-Evolution in the field of technology
+                                         </P>
+                                            
+                                            </div>
+                                            <div class="image">
+                                                <img src="anakhronus1.jpeg" alt="">
+                                            </div>
+                                          </section>
+                                        </div>
+                            </div>
+                        
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+	</script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+	</script> 
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js">
+	</script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+	</script> 
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js">
+	</script> 
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js">
+	</script>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	</script>
+
+<!--  for scroll on reveal animation-->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+<!-- for green bar in nav bar-->
+<script>
+$(document).ready(function() {
+  // Add a class to the "Technical" link when the "Technical" section is in view
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > $("#Technical").offset().top - $(window).height() + 100) {
+      $(".navbar-nav.nav-link.active,.navbar-nav.nav-link.show").removeClass("active show");
+      $(".navbar-nav.nav-link[href='#Technical']").addClass("active");
+    }
+    // Add a class to the "Cultural" link when the "Cultural" section is in view
+    else if ($(this).scrollTop() > $("#About").offset().top - $(window).height() + 100) {
+      $(".navbar-nav.nav-link.active,.navbar-nav.nav-link.show").removeClass("active show");
+      $(".navbar-nav.nav-link[href='#About']").addClass("active");
+    }
+    else if ($(this).scrollTop() > $("#Cultural").offset().top - $(window).height() + 100) {
+      $(".navbar-nav.nav-link.active,.navbar-nav.nav-link.show").removeClass("active show");
+      $(".navbar-nav.nav-link[href='#Cultural']").addClass("active");
+    }
+    // Add a class to the "Social" link when the "Social" section is in view
+    else if ($(this).scrollTop() > $("#Social").offset().top - $(window).height() + 100) {
+      $(".navbar-nav.nav-link.active,.navbar-nav.nav-link.show").removeClass("active show");
+      $(".navbar-nav.nav-link[href='#Social']").addClass("active");
+    }
+    else {
+      $(".navbar-nav.nav-link.active,.navbar-nav.nav-link.show").removeClass("active show");
+      $(".navbar-nav.nav-link[href='#Home']").addClass("active");
+    }
+  });
+});
+</script>
+
+
+    <footer class="footer">
+        <p> &copy; All rights reserved.</p>
+    </footer>
+</body>
+</html>

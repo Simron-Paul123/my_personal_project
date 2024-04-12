@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css">
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+    <link rel="stylesheet" href="{%static 'dept.css'%}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="{%static '/pictures/tmslogo1.png'%}">
+    <title>Departmental</title>
+  
+    <!-- styling carousel-->
+	<style>
+    .technical{
+      background-color:  #222;;
+    }
+        .carousel-item {
+	height: 100vh;
+	min-height: 300px;
+}
+.carousel-caption {
+	bottom: 220px;
+}
+.carousel-caption h5 {
+	font-size: 45px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-top: 25px;
+	font-family: merienda;
+    color: aqua;
+}
+.carousel-caption p {
+	width: 60%;
+	margin: auto;
+	font-size: 18px;
+	line-height: 1.9;
+	font-family: poppins;
+    color: aqua;
+}
+.carousel-caption a {
+	text-transform: uppercase;
+	background: #262626;
+	padding: 10px 30px;
+	display: inline-block;
+	color:teal;
+	margin-top: 15px;
+}
+.w-100 {
+	height: 100vh;
+}
+
+.navbar-nav .nav-link {
+  color: aqua; /* Change this to the desired color */
+}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+     color: green !important; 
+}
+.navbar-nav.nav-link.active {
+  color: green!important;
+}
+
+@media only screen and (max-width: 767px) {
+	.navbar-nav.ml-auto {
+		background: rgba(0, 0, 0, 0.5);
+	}
+	.navbar-nav a {
+		font-size: 14px;
+		font-weight: normal;
+	}
+  media only screen and (max-width: 767px) {
+    .navbar-nav.ml-auto {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .navbar-nav a {
+      font-size: 14px;
+      font-weight: normal;
+    }
+    .content{
+          display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+      }
+      .content1{
+          display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+      }
+  }
+  
+}
+
+    </style>
+</head>
+<body>
+	 <!--  nav bar-->
+     <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+         <!-- <a class="navbar-brand me-auto" href="home.html">Techno Main Saltlake</a>-->
+         <a class="navbar-brand" href="#"><img 
+          src= 
+          "{%static '/pictures/tmslogo.png'%}" 
+          alt="" width="130px" 
+          height="32px"> 
+        <!--  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>-->
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+               
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a style= "margin-top: -25px" class="nav-link max-lg-2" aria-current="page" href="#Technical">Technical</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link max-lg-2" href="#Cultural">Cultural</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link max-lg-2" href="#Social">Social</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link max-lg-2" href="{% url 'home' %}">Home</a>
+                  </li>
+                </div>
+              </div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </nav>
+	<div class="carousel slide" data-ride="carousel" id="carouselExampleIndicators">
+		<ol class="carousel-indicators">
+			<li class="active" data-slide-to="0" data-target="#carouselExampleIndicators"></li>
+			<li data-slide-to="1" data-target="#carouselExampleIndicators"></li>
+			<li data-slide-to="2" data-target="#carouselExampleIndicators"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img alt="First slide" class="d-block w-100" src="{%static '/pictures/CSE2.png'%}">
+				<div class="carousel-caption d-none d-md-block">
+					<h5 class="animated bounceInRight" style="animation-delay: 1s"></h5>
+					<p class="animated bounceInLeft" style="animation-delay: 2s "></p>
+					
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img alt="Second slide" class="d-block w-100" src="{%static '/pictures/g3.png'%}">
+				<div class="carousel-caption d-none d-md-block">
+					<h5 class="animated slideInDown" style="animation-delay: 1s"></h5>
+					<p class="animated fadeInUp" style="animation-delay: 2s"></p>
+					
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img alt="Third slide" class="d-block w-100" src="{%static '/pictures/ece2.jpg'%}">
+				<div class="carousel-caption d-none d-md-block">
+					
+				
+				
+				</div>
+			</div>
+		</div><a class="carousel-control-prev" data-slide="prev" href="#carouselExampleIndicators" role="button"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a> <a class="carousel-control-next" data-slide="next" href="#carouselExampleIndicators" role="button"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>
+	</div>
+    <div class="section reveal">
+        <section id="Technical"data-aos="fade-up"data-aos-duration="3000">
+            <div class="title"data-aos="fade-up"data-aos-duration="3000">
+                <h2>DEPT-Information Technology</h2>
+                <h3>Events are conducted by cultural club of IT - INSPIRIT</h3>
+            </div>
+            <div class="content">
+                <div class="image">
+                    <img src="{%static '/pictures/inspirit.png'%}" alt="">
+                </div>
+        
+                <div class="service-box"style="color:blue">
+                <h2>INSPIRIT</h2>
+                
+               <p>
+                INSPIRIT is a multifaceted demesne of culture that has been showcased as our department’s cultural fest. From the stage being set up, to the gates being covered in flowers, lights and beautiful posters made by the students, INSPIRIT did it all this past year on __ March 2023. 
+The event embarked on with some wonderfully curated musical performances, followed by a picturesque dance performance featuring the theme “Youth”, incorporating Bengali folk, all performed by the departmental students. The Grand Fashion Show – “ALLURE” won hearts and applause as the students depicted the theme “Elements of Nature” through their confident performance on the runway. 
+In between the performances, the anchors and alumni engaged in shedding some light on wisdom and experience. The showstopper of the night was none other than the renowned singer – Snigdhajit Bhowmik, whose performance mesmerized the crowd, engulfing them into a beautiful haze. 
+The evening’s huge success was possible on account of the immense hard work by the faculty and students of the department. Hence, the department of Information Technology wishes to carry on with this enriching tradition for years to come!
+
+               </p>
+                <a href="/IT" class="btn">Visit us</a>
+                </div>
+            </div>
+            </section>
+          </div>
+          <div class="section reveal">
+            <section id="Cultural"data-aos="fade-up"data-aos-duration="3000">
+                <div class="title"data-aos="fade-up"data-aos-duration="3000">
+                    <h2>DEPT-Electronics and Communication Engineering</h2>
+                    <h3>Event are conducted by -ECE department</h3>
+                </div>
+                <div class="content">
+                  <div class="service-box1" style="color:rgb(165, 61, 165);">
+                    <b><h2>eMerge </h2></b>
+                    
+                    <p>
+                        eMerge is the yearly alumni gathering organized by the Department of Electronics and Communication Engineering (ECE) at Techno India, Salt Lake. This event serves as a platform for former students of the department to reconnect with each other, reminisce about their time at the institution, and share experiences since graduating.
+During eMerge, alumni have the opportunity to network with fellow graduates, faculty members, and current students. It often includes a variety of activities such as panel discussions, keynote speeches, technical workshops, cultural events, and recreational activities.
+The event aims to foster a sense of belonging among alumni, promote collaboration and knowledge sharing, and provide opportunities for professional growth and development. It also allows the department to showcase its achievements and advancements to its alumni community.
+Overall, eMerge is an important occasion for the Department of ECE at Techno India, Salt Lake, to maintain strong connections with its alumni and celebrate their successes while also inspiring current students to follow in their footsteps.
+
+
+                    </p>
+                    <a href="https://www.facebook.com/Cheerio2K23" class="btn">Visit us</a>
+                    </div>
+                    <div class="image">
+                        <img src="{%static '/pictures/ece.jpg'%}" alt="">
+                    </div>
+            
+                   
+                </div>
+                </section>
+              </div>
+              <div class="section reveal">
+                <section id="Social"data-aos="fade-up"data-aos-duration="3000">
+                    <div class="title"data-aos="fade-up"data-aos-duration="3000">
+                        <h2>DEPT-Computer Science Engineering</h2>
+                        <h3>Events are conducted by -departmental club of CSE</h3>
+                    </div>
+                    <div class="content1">
+                        <div class="image">
+                            <img src="{%static '/pictures/ece.jpg'%}" alt="">
+                        </div>
+                
+                        <div class="service-box2">
+                        <h2>CSE-UNITED</h2>
+                        
+                       <P>
+                        At a time when the fest frenzy was just catching up, the Department of Computer Science and Engineering of Techno India Salt Lake came up with something quite ingenious. A totally new event, CSE United, the first of its kind was the annual and cultural cum alumni meet which began in the year 2011 under the supervision of the faculties of the department. 6 editions down the timeline, more performances oriented events, a bigger budget became add-ons. The glamour grew exponentially, the event which once begun as a platform to unveil the potential of the students became an ever bonding journey between the students, the alumni and the faculties.
+                       </P>
+                        <a href="https://www.cseunited.com/" class="btn">Visit us</a>
+                        </div>
+                    </div>
+                    </section>
+                  </div>
+                  
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+	</script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+	</script> 
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js">
+	</script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+	</script> 
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js">
+	</script> 
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js">
+	</script>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	</script>
+
+<!--  for scroll on reveal animation-->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+<!-- for green bar in nav bar-->
+<script>
+$(document).ready(function() {
+  // Add a class to the "Technical" link when the "Technical" section is in view
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > $("#Technical").offset().top - $(window).height() + 100) {
+      $(".navbar-nav.nav-link.active,.navbar-nav.nav-link.show").removeClass("active show");
+      $(".navbar-nav.nav-link[href='#Technical']").addClass("active");
+    }
+    // Add a class to the "Cultural" link when the "Cultural" section is in view
+    else if ($(this).scrollTop() > $("#Cultural").offset().top - $(window).height() + 100) {
+      $(".navbar-nav.nav-link.active,.navbar-nav.nav-link.show").removeClass("active show");
+      $(".navbar-nav.nav-link[href='#Cultural']").addClass("active");
+    }
+    // Add a class to the "Social" link when the "Social" section is in view
+    else if ($(this).scrollTop() > $("#Social").offset().top - $(window).height() + 100) {
+      $(".navbar-nav.nav-link.active,.navbar-nav.nav-link.show").removeClass("active show");
+      $(".navbar-nav.nav-link[href='#Social']").addClass("active");
+    }
+    else {
+      $(".navbar-nav.nav-link.active,.navbar-nav.nav-link.show").removeClass("active show");
+      $(".navbar-nav.nav-link[href='#Home']").addClass("active");
+    }
+  });
+});
+</script>
+
+
+    <footer class="footer">
+        <p> &copy; All rights reserved.</p>
+    </footer>
+</body>
+</html>
